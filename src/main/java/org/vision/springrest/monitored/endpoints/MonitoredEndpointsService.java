@@ -61,17 +61,15 @@ public class MonitoredEndpointsService {
         return endpointsList.subList(0, quantity);
     }
 
-    public List<MonitoredEndpoints> getAuthorisedQuantityEndpoints(int quantity, Long userId, String token){
+    public List<MonitoredEndpoints> getAuthorisedQuantityEndpoints(Long userId, String token){
         ArrayList<MonitoredEndpoints> endpointsList = new ArrayList<>();
         List<MonitoredEndpoints> temp = getAllEndpoints();
         for(int i = 0; i < temp.size(); i++){
-            if(temp.get(i).getOwner().getId().equals(userId)){
-                if(temp.get(i).getOwner().getAccessToken().equals(token)) {
-                    endpointsList.add(temp.get(i));
-                }
+            if(temp.get(i).getOwner().getId().equals(userId) && temp.get(i).getOwner().getAccessToken().equals(token)){
+                endpointsList.add(temp.get(i));
             }
         }
-        return endpointsList.subList(0, quantity);
+        return endpointsList;
     }
 
     public List<MonitoredEndpoints> getAllEndpointsByUserId(Long userId){

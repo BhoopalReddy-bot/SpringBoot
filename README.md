@@ -1,6 +1,6 @@
 # spring-booted-endpoints
 <h1> Monitored Endpoints Created in Spring Boot 2.0+ </h1>
-<p> This Spring Boot project was coded to provide a microservice application for monitoring URL endpoints.
+<p> This Spring Boot project was coded to provide a microservice application for monitoring URL endpoints. <br />
 <b> Dependencies: Web, JPA, Actuator, MySQL </b>
 </p>
   <h2> REST API Operations </h2>
@@ -31,7 +31,19 @@
 | PUT | Updates an endpoint by providing the specific ID in the JSON payload, however, the {userId} must be specified in the URI | /api/users/{userId}/endpoints |
 | DELETE | Deletes an endpoint by providing the specific {id} in the URI | /api/users/endpoints/{id} |
 
-<h2> Things that still need to be done to successfully complete the given task </h2>
+<h2> Things that have been done so far... </h2>
+<ul>
+<li> ✔ User Model, Controller, Repository Interface, and Service </li>
+<li> ✔ MonitoredEndpoints Model, Controller, Repository Interface, and Service </li>
+<li> ✔ Create a new "restapi" MySQL Database </li>
+<li> ✔ Edit application.properties and connect to MySQL DB </li>
+<li> ✔ Option to list a specified number of Users and EndPoints </li>
+<li> ✔ Temporary String Token Authentication for GET requests </li>
+<li> ✔ Auto generated ID values in models + auto generated Timestamps in MonitoredEndpoints </li>
+
+</ul>
+<br />
+<h2> Things that still need to be done to successfully complete the given task: </h2>
 <ol>
 <li> Implement MonitoringResults </li>
 <li> Proper Authentication with JWT or OAuth (Current authentication is implemented using a very safe, certified, and harmless plaintext String method - i.e. not production-ready) </li>
