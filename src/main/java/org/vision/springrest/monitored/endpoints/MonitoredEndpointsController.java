@@ -62,7 +62,7 @@ public class MonitoredEndpointsController {
         return monitoredEndpointsService.getUserRequestedQuantityOfEndpoints(quantity, userId);
     }
 
-    @RequestMapping("/{userId}/endpoints={quantity}?token={token}")
+    @RequestMapping("/{userId}/endpoints={quantity}&token={token}")
     public List<MonitoredEndpoints> getAuthorisedQuantityEndpoints(@PathVariable Long userId, @PathVariable int quantity, @PathVariable String token){
         return monitoredEndpointsService.getAuthorisedQuantityEndpoints(quantity, userId, token);
     }
