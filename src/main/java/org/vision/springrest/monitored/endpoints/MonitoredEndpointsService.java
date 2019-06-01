@@ -53,7 +53,7 @@ public class MonitoredEndpointsService {
     public List<MonitoredEndpoints> getUserRequestedQuantityOfEndpoints(int quantity, Long userId){
         ArrayList<MonitoredEndpoints> endpointsList = new ArrayList<>();
         List<MonitoredEndpoints> temp = getAllEndpoints();
-        for(int i = 0; i < quantity; i++){
+        for(int i = 0; i < temp.size(); i++){
             if(temp.get(i).getOwner().getId().equals(userId)){
                 endpointsList.add(temp.get(i));
             }
