@@ -1,4 +1,7 @@
 package org.vision.springrest.monitored.endpoints;
 
-public class MonitoredEndpointsRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface MonitoredEndpointsRepository extends CrudRepository<MonitoredEndpoints, Long> {
+
 }
