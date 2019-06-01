@@ -1,15 +1,10 @@
 package org.vision.springrest.monitored.endpoints;
 
-import jdk.jfr.Timestamp;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.vision.springrest.user.User;
 
 import javax.persistence.*;
-import java.time.ZonedDateTime;
 import java.util.Date;
 
 @Entity
@@ -20,6 +15,8 @@ public class MonitoredEndpoints {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @Column(unique = true)
     private String url;
 
     @CreationTimestamp
@@ -36,13 +33,8 @@ public class MonitoredEndpoints {
     public MonitoredEndpoints() {
     }
 
-    public MonitoredEndpoints(Long id, String name, String url, Date createdAt, Date updatedAt, int monitoredInterval, Long ownerId) {
+    public MonitoredEndpoints(Long id, Long ownerId) {
         this.id = id;
-        this.name = name;
-        this.url = url;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.monitoredInterval = monitoredInterval;
         this.owner = new User(ownerId, "", "", "");
     }
 

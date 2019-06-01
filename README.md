@@ -25,7 +25,7 @@
 | GET | Returns the first number of {n} users in a descending order | /api/users/endpoints={n} |
 | GET | Returns all existing endpoints for a specific {userId} | /api/users/{userId}/endpoints |
 | GET | Returns {n} number of endpoint for a specific {userId} | /api/users/{userId}/endpoints={n} |
-| GET | Returns all the endpoints of an owner for a specified {userId} and the correctly provided {token} | api/users/{userId}/endpoints/secure?token={token} |
+| GET | Returns all the endpoints of an owner for a specified {userId} and the correctly provided {token} | /api/users/{userId}/endpoints/secure?token={token} |
 | POST | Inserts a new endpoint for a specified {userId} (MANY endpoints to ONE user relation applies) | /api/users/{userId}/endpoints |
 | PUT | Updates an endpoint by providing the specific {id} in the URI along with {userId} | /api/users/{userId}/endpoints/{id} |
 | PUT | Updates an endpoint by providing the specific ID in the JSON payload, however, the {userId} must be specified in the URI | /api/users/{userId}/endpoints |
@@ -35,17 +35,17 @@
 <ul>
 <li> ✔ User Model, Controller, Repository Interface, and Service </li>
 <li> ✔ MonitoredEndpoints Model, Controller, Repository Interface, and Service </li>
+<li> ✔ MonitoringResults Model, Controller, Repository Interface, and Service </li>
 <li> ✔ Create a new "restapi" MySQL Database </li>
 <li> ✔ Edit application.properties and connect to MySQL DB </li>
 <li> ✔ Option to list a specified number of Users and EndPoints </li>
 <li> ✔ Temporary String Token Authentication for GET requests </li>
 <li> ✔ Auto generated ID values in models + auto generated Timestamps in MonitoredEndpoints </li>
-
+<li> ✔ Enable Spring Actuator on port 9001 using context path => /actuator/ </li>
 </ul>
-<br />
 <h2> Things that still need to be done to successfully complete the given task: </h2>
 <ol>
-<li> Implement MonitoringResults </li>
+<li> Get MonitoringResults to work </li>
 <li> Proper Authentication with JWT or OAuth (Current authentication is implemented using a very safe, certified, and harmless plaintext String method - i.e. not production-ready) </li>
 <li> Write tests </li>
 <li> Add more validations to models (unique username, email, etc. using Annotations) </li>

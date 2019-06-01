@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
-public class MonitoredEndpointsController {
+public class MonitoredEndpointsController{
 
     @Autowired
     private MonitoredEndpointsService monitoredEndpointsService;
