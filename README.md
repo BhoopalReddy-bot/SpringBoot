@@ -25,7 +25,7 @@
 | GET | Returns the first number of {n} users in a descending order | /api/users/endpoints={n} |
 | GET | Returns all existing endpoints for a specific {userId} | /api/users/{userId}/endpoints |
 | GET | Returns {n} number of endpoint for a specific {userId} | /api/users/{userId}/endpoints={n} |
-| GET | Returns the first number of {n} endpoints for a specified {userId} and the correctly provided {token} | /api/users/{userId}/endpoints={n}&token={token} |
+| GET | Returns all the endpoints of an owner for a specified {userId} and the correctly provided {token} | api/users/{userId}/endpoints/secure?token={token} |
 | POST | Inserts a new endpoint for a specified {userId} (MANY endpoints to ONE user relation applies) | /api/users/{userId}/endpoints |
 | PUT | Updates an endpoint by providing the specific {id} in the URI along with {userId} | /api/users/{userId}/endpoints/{id} |
 | PUT | Updates an endpoint by providing the specific ID in the JSON payload, however, the {userId} must be specified in the URI | /api/users/{userId}/endpoints |
