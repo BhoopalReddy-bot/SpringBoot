@@ -20,19 +20,22 @@ public class MonitoringResults {
     @ManyToOne
     private MonitoredEndpoints monitoredEndpoint;
 
-    public MonitoringResults(int httpStatus, String returnedPayload, Long userId, Long endpointId){
+    public MonitoringResults(){
+
+    }
+
+    public MonitoringResults(int httpStatus, String returnedPayload, Long endpointId, Long userId){
         this.httpStatus = httpStatus;
-        this.returnedPayload = returnedPayload;
         this.returnedPayload = returnedPayload;
         this.monitoredEndpoint = new MonitoredEndpoints(endpointId, userId);
     }
 
-    public MonitoringResults(Long id, Date checkDate, int httpStatus, String returnedPayload, Long userId, Long endpointId) {
+    public MonitoringResults(Long id, Date checkDate, int httpStatus, String returnedPayload, MonitoredEndpoints monitoredEndpoint) {
         this.id = id;
         this.checkDate = checkDate;
         this.httpStatus = httpStatus;
         this.returnedPayload = returnedPayload;
-        this.monitoredEndpoint = new MonitoredEndpoints(endpointId, userId);
+        this.monitoredEndpoint = monitoredEndpoint;
     }
 
     public Long getId() {

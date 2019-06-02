@@ -35,7 +35,7 @@ public class MonitoredEndpoints {
 
     public MonitoredEndpoints(Long id, Long ownerId) {
         this.id = id;
-        this.owner = new User(ownerId, "", "", "");
+        this.owner = new User(ownerId);
     }
 
     public User getOwner() {

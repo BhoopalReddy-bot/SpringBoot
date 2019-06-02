@@ -82,4 +82,15 @@ public class MonitoredEndpointsService {
         }
         return endpointsList;
     }
+
+    public MonitoredEndpoints getAuthorisedEndpoint(Long userId, Long id, String token){
+        List<MonitoredEndpoints> temp = getAllEndpoints();
+        MonitoredEndpoints obj = new MonitoredEndpoints();
+        for(int i = 0; i < temp.size(); i++){
+            if(temp.get(i).getOwner().getId().equals(userId) && (temp.get(i).getId().equals(id)) && (temp.get(i).getOwner().getAccessToken().equals(token))){
+                obj = temp.get(i);
+            }
+        }
+        return obj;
+    }
 }

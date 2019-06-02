@@ -10,16 +10,21 @@ import java.util.List;
 public class MonitoringResultsController {
 
     @Autowired
-    private MonitoringResultsService mrService;
+    private MonitoringResultsService monitoringResultsService;
 
-    @RequestMapping("/{userId}/endpoints/{endpointId}/results")
-    private List<MonitoringResults> getResultsForUser(@PathVariable Long userId, @PathVariable Long endpointId, @RequestParam String token){
-        return mrService.getResultsForUser(userId, endpointId, token);
+    @RequestMapping("/{userId}/endpoints/{endpointId}/results/secure")
+    private List<MonitoringResults> getResultsForUserAndId(@PathVariable Long userId, @PathVariable Long endpointId, @RequestParam String token){
+        return monitoringResultsService.getResultsForUser(userId, endpointId, token);
     }
 
-    @RequestMapping("/endpoints/results")
-    private List<MonitoringResults> getAllResults(){
-        return mrService.getAllResults();
+    @RequestMapping("/{userId}/endpoints/results/secure")
+    private List<MonitoringResults> getAllResults(@PathVariable Long userId, @RequestParam String token){
+        return monitoringResultsService.getAllResults(userId, token);
+    }
+
+    @RequestMapping("/endpoints/results/{id}/secure")
+    private void deleteResultById(@PathVariable Long id){
+        monitoringResultsService.deleteResultById(id);
     }
 
 }

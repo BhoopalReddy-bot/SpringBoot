@@ -10,11 +10,11 @@ import java.util.List;
 public class MonitoringResultsService {
 
     @Autowired
-    private MonitoringResultsRepository mrRepository;
+    private MonitoringResultsRepository monitoringResultsRepository;
 
     public List<MonitoringResults> getResultsForUser(Long userId, Long endpointId, String token){
         ArrayList<MonitoringResults> resultList = new ArrayList<>();
-        mrRepository.findAll().forEach(r -> {
+        monitoringResultsRepository.findAll().forEach(r -> {
             if((r.getMonitoredEndpoint().getOwner().getId().equals(userId))&&(r.getMonitoredEndpoint().getOwner().getAccessToken().equals(token))){
                 resultList.add(r);
             }
@@ -22,14 +22,26 @@ public class MonitoringResultsService {
         return resultList;
     }
 
-    public List<MonitoringResults> getAllResults(){
+    public List<MonitoringResults> getAllResults(Long userId, String token){
         ArrayList<MonitoringResults> resultsList = new ArrayList<>();
-        mrRepository.findAll().forEach(r -> resultsList.add(r));
+        monitoringResultsRepository.findAll().forEach(r -> {
+            if((r.getMonitoredEndpoint().getOwner().getId().equals(userId)) && (r.getMonitoredEndpoint().getOwner().getAccessToken().equals(token))){
+                resultsList.add(r);
+            }
+        });
         return resultsList;
     }
 
     public void addObservation(int status, String payload, Long userId, Long endpointId){
-        MonitoringResults observation = new MonitoringResults(status, payload, userId, endpointId);
-        mrRepository.save(observation);
+        MonitoringResults observation = new MonitoringResults(status, payload, endpointId, userId);
+        monitoringResultsRepository.save(observation);
+    }
+
+    public void deleteResultById(Long id){
+        monitoringResultsRepository.deleteById(id);
+    }
+
+    public void TestMeCallMethod(){
+        System.out.println("HELLO FROM THE OTHER SIDE");
     }
 }
