@@ -14,7 +14,7 @@
 
 <b> Note: </b> the code was compiled with Java 12, hence, the JRE that you use must match the compiler version or it should be higher.
 
-<h2> Examples using Postman: </h2>
+<h2> 📬 Examples using Postman: </h2>
 
 1. Manually testing the server with a simple Hello: <br />
 <img src="readmepics/1.jpg" width="400">
@@ -80,7 +80,7 @@ For more examples, refer to the "readmepics" folder.
 | GET | :9001/actuator/health |
 | GET | :9001/actuator/metrics |
 
-<h2> Things that have been done so far... </h2>
+<h2> 📜 Things that have been done so far... </h2>
 <ul>
 <li> ✔ User Model, Controller, Repository Interface, and Service </li>
 <li> ✔ MonitoredEndpoints Model, Controller, Repository Interface, and Service </li>
