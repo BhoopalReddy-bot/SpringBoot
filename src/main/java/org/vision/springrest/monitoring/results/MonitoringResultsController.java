@@ -22,7 +22,7 @@ public class MonitoringResultsController {
         return monitoringResultsService.getAllResults(userId, token);
     }
 
-    @RequestMapping("/endpoints/results/{id}/secure")
+    @RequestMapping(value="/endpoints/results/{id}/secure", method = RequestMethod.DELETE)
     private void deleteResultById(@PathVariable Long id){
         monitoringResultsService.deleteResultById(id);
     }
