@@ -1,4 +1,4 @@
-# Spring Booted Endpoints Monitoring Microservice Application
+# Spring Booted Endpoints Monitoring Microservice
 <h1> Monitored Endpoints Created in Spring Boot v2.1.5 </h1>
 <p> This Spring Boot project was coded to provide a microservice application for monitoring URL endpoints. <br />
 <b> 🍃 Dependencies: Web, JPA, Actuator, MySQL </b>
@@ -93,11 +93,12 @@ For more examples, refer to the "readmepics" folder.
 <li> ✔ Enable Spring Actuator on port 9001 using context path => /actuator/ </li>
 <li> ✔ Validated unique columns in Models for User and MonitoredEndpoints </li>
 <li> ✔ Autowired MonitoringResultsService to MonitoredEndpointsController to log HTTP status codes on some requests </li>
+<li> ✔ Compiled the first version into a .jar snapshot - "good enough for a demo but definitely not production" </li>
 </ul>
 <h2> 🔨 Things that still need to be done to successfully complete the given task: </h2>
 <ol>
 <li> Proper Authentication with JWT or OAuth (Current authentication is implemented using a very safe, certified, and harmless plaintext String method - i.e. not production-ready) </li>
-<li> Write tests </li>
+<li> Write automated tests </li>
 <li> Deprecate some endpoints that omit */secure/* -> this is not required by the task and populates the boiler plate code too much. Looks very ugly. </li>
 <li> Finish this README file and format it nicely </li>
 </ol>
