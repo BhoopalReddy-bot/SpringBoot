@@ -1,16 +1,42 @@
-# spring-booted-endpoints
+# Spring Booted Endpoints Monitoring Microservice Application
 <h1> Monitored Endpoints Created in Spring Boot v2.1.5 </h1>
 <p> This Spring Boot project was coded to provide a microservice application for monitoring URL endpoints. <br />
 <b> 🍃 Dependencies: Web, JPA, Actuator, MySQL </b>
 </p>
 <h2> 🏃 Steps to run the Spring Boot Microservice REST API </h2>
 <p>
-![CMD run command to start server](./readmepics/0.jpg)
+1. Navigate to the "target" folder containing "springrest-0.0.1-SNAPSHOT.jar" <br />
+2. Run the following command: <br />
+
+  `java -jar springrest-0.0.1-SNAPSHOT.jar`
+
+<img src="readmepics/0.jpg" width="750" alt="cmd command to start server">
+
+<b> Note: </b> the code was compiled with Java 12, hence, the JRE that you use must match the compiler version or it should be higher.
+
+<h2> Examples using Postman: </h2>
+
+1. Manually testing the server with a simple Hello: <br />
+<img src="readmepics/1.jpg" width="400">
+
+2. Get all users: <br />
+<img src="readmepics/2.jpg" width="400">
+
+3. Get all endpoints for user with an ID = 5, and token = myTokenAccess: <br />
+<img src="readmepics/3.jpg" width="400">
+
+4. Get all results for user with an ID = 5, endpointID = 13, and token = myTokenAccess: <br />
+<img src="readmepics/5.jpg" width="400">
+
+5. If the token is incorrect/invalid, then the server returns a blank: <br />
+<img src="readmepics/6.jpg" width="400">
+
+For more examples, refer to the "readmepics" folder.
 </p>
 
   <h2> REST API Operations </h2>
   <h3> <li> User CRUD Requests </li> </h3>
- 
+
 | Method | Description | Endpoint |
 | :---   |     :---:   |     ---: |
 | GET | Returns all users | /api/users |
@@ -73,5 +99,5 @@
 <li> Proper Authentication with JWT or OAuth (Current authentication is implemented using a very safe, certified, and harmless plaintext String method - i.e. not production-ready) </li>
 <li> Write tests </li>
 <li> Deprecate some endpoints that omit */secure/* -> this is not required by the task and populates the boiler plate code too much. Looks very ugly. </li>
-<li> Finish this README and its steps to run the Microservice </li>
+<li> Finish this README file and format it nicely </li>
 </ol>
