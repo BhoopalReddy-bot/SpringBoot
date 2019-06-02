@@ -41,7 +41,4 @@ public class MonitoringResultsService {
         monitoringResultsRepository.deleteById(id);
     }
 
-    public void TestMeCallMethod(){
-        System.out.println("HELLO FROM THE OTHER SIDE");
-    }
 }

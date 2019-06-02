@@ -1,11 +1,11 @@
 # spring-booted-endpoints
-<h1> Monitored Endpoints Created in Spring Boot 2.0+ </h1>
+<h1> Monitored Endpoints Created in Spring Boot v2.1.5 </h1>
 <p> This Spring Boot project was coded to provide a microservice application for monitoring URL endpoints. <br />
 <b> 🍃 Dependencies: Web, JPA, Actuator, MySQL </b>
 </p>
 <h2> 🏃 Steps to run the Spring Boot Microservice REST API </h2>
 <p>
-[placeholder]
+![CMD run command to start server](./readmepics/0.jpg)
 </p>
 
   <h2> REST API Operations </h2>
