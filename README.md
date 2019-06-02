@@ -5,7 +5,7 @@
 </p>
 <h2> 🏃 Steps to run the Spring Boot Microservice REST API </h2>
 <p>
-1. Configure the MySQL Database using the "target/classes/application.properties" file (change DB name and credentials) <br />
+1. Configure the MySQL Database using the "target/config/application.properties" file <br />
 2. Navigate to the "target" folder containing "springrest-0.0.1-SNAPSHOT.jar" <br />
 3. Run the following command: <br />
 
